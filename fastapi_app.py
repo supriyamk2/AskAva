@@ -54,6 +54,9 @@ def authenticate_user():
         return None
 
 app = FastAPI() 
+@app.get("/")  # Define the handler for the root path
+async def root():
+    return {"message": "Welcome to my API!"} 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")  # Make sure this is set
 
